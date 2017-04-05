@@ -4828,6 +4828,8 @@ __configure_freebsd_pkg_details() {
 
     ## ensure future ports builds use pkgng
     echo "WITH_PKGNG=   yes" >> /etc/make.conf
+
+    /usr/local/sbin/pkg update -f || return 1
 }
 
 install_freebsd_9_stable_deps() {
